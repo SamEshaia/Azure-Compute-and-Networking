@@ -1,5 +1,5 @@
 # Azure-Compute-and-Networking
-This Azure Compute and Networking Guide shows the examination of network traffic analysis between two Azure Virtual Machines using Wireshark and experiment with Network Security Groups
+This Azure Compute and Networking Project shows the examination of network traffic analysis between two Azure Virtual Machines using Wireshark and experiment with Network Security Groups
  <section id="header-section">
   <h1>Environments and Technologies Used</h1>
   <ul>
@@ -17,7 +17,17 @@ This Azure Compute and Networking Guide shows the examination of network traffic
  </section>
  <section id="steps">
   <h1>Actions and Observations</h1>
-  <fieldset>
-   <img 
-  </fieldset>
+  <h3>Creating The Resources</h3>
+    <p>I created a Resource Group in Microsoft Azure. Moreover, I set up a Windows 10 Virtual Machine and a Linux (Ubuntu) Virtual Machine. While configuring the Windows 10 VM, I allowed it to create a Virtual Network (Vnet) and Subnet. Lastly, I observed the Virtual Machine within the network using Network Watcher.</p>
+    <img width="700" height="400" alt="image" src="https://github.com/SamEshaia/Azure-Compute-and-Networking/assets/124312452/c8d77a6f-83e2-4a7d-bdbb-0208f9a58a1d">  
+  <h3>Observe ICMP Traffic</h3>
+   <p>After creating the Virtual Machines, I used Remote Desktop to connect to the Windows 10 VM. I installed Wireshark and filtered for ICMP traffic. By pinging the private IP address of the Ubuntu VM within the Windows 10 VM, I observed ping requests and replies in Wireshark. Then, I pinged www.google.com and examined the traffic.</p>
+   <img width="700" height="400" alt="image" src="https://github.com/SamEshaia/Azure-Compute-and-Networking/assets/124312452/a3c2ac1d-2419-4c30-a987-8fa589881aa4">
+   <p>I initiated a perpetual ping between the Windows 10 and Ubuntu VMs. Disrupting the inbound ICMP traffic in Azure, I observed the interruption in communication between the VMs. Finally, I stopped the ping at the end of this experiment.</p>
+   <img width="700" height="400" alt="image" src="https://github.com/SamEshaia/Azure-Compute-and-Networking/assets/124312452/b735ec2f-0928-46d3-b922-3121d3eb1270">  
+   <img width="700" height="400" alt="image" src="https://github.com/SamEshaia/Azure-Compute-and-Networking/assets/124312452/0b68b707-11dd-4043-8e22-366c6ffbdad8">
+  <h3>Observe SSH Traffic</h3>
+   <p>Next I was able to "SSH into" the Ubuntu Virtual Machine. This helped me observe SSH traffic between the Windows 10 Virtual Machine and the Ubuntu Virtual Machine.</p>
+   <img width="700" height="400" alt="image" src="https://github.com/SamEshaia/Azure-Compute-and-Networking/assets/124312452/2f9e0d87-c012-4c65-9b7a-3cec03f211b5">
+  
  </section>
